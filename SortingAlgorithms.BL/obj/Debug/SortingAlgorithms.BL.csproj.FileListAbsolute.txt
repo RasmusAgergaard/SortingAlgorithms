@@ -1,0 +1,6 @@
+C:\Users\rasmu\Desktop\Main drive\Programming\SortingAlgorithms\SortingAlgorithms.BL\bin\Debug\SortingAlgorithms.BL.dll
+C:\Users\rasmu\Desktop\Main drive\Programming\SortingAlgorithms\SortingAlgorithms.BL\bin\Debug\SortingAlgorithms.BL.pdb
+C:\Users\rasmu\Desktop\Main drive\Programming\SortingAlgorithms\SortingAlgorithms.BL\obj\Debug\SortingAlgorithms.BL.csprojAssemblyReference.cache
+C:\Users\rasmu\Desktop\Main drive\Programming\SortingAlgorithms\SortingAlgorithms.BL\obj\Debug\SortingAlgorithms.BL.csproj.CoreCompileInputs.cache
+C:\Users\rasmu\Desktop\Main drive\Programming\SortingAlgorithms\SortingAlgorithms.BL\obj\Debug\SortingAlgorithms.BL.dll
+C:\Users\rasmu\Desktop\Main drive\Programming\SortingAlgorithms\SortingAlgorithms.BL\obj\Debug\SortingAlgorithms.BL.pdb
