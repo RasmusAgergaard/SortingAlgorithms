@@ -8,20 +8,55 @@ namespace SortingAlgorithms.BL
 {
     public class BubbleSort
     {
+        private int amount = 152;
         private Random random = new Random();
-        public int[] numbers = new int[100];
+        public int[] numbers;
 
         public BubbleSort()
         {
+            numbers = new int[amount];
+            PopulateArray();
+            RadomizeArray(numberOfMoves: 1000);
+            SortArray();
+        }
+
+        public void PopulateArray()
+        {
             for (int i = 0; i < numbers.Length; i++)
             {
-                numbers[i] = random.Next(100);
+                numbers[i] = i;
             }
         }
 
-        public void SortList()
+        public void RadomizeArray(int numberOfMoves)
         {
+            for (int i = 0; i < numberOfMoves; i++)
+            {
+                var posA = random.Next(amount);
+                var posB = random.Next(amount);
 
+                var temp = numbers[posA];
+                numbers[posA] = numbers[posB];
+                numbers[posB] = temp;
+            }
+        }
+
+        public void SortArray() //TODO: Fix this to only use the right amount of passes
+        {
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                var numbersOfPasses = numbers.Length - 1;
+
+                for (int j = 0; j < numbersOfPasses; j++)
+                {
+                    if (numbers[j] > numbers[j + 1])
+                    {
+                        var temp = numbers[j];
+                        numbers[j] = numbers[j + 1];
+                        numbers[j + 1] = temp;
+                    } 
+                }
+            }
         }
     }
 }

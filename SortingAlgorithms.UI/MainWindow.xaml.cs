@@ -35,21 +35,24 @@ namespace SortingAlgorithms.UI
 
         public void DrawLines()
         {
+            var startDrawX = 20;
+            var startDrawY = 490;
+
             for (int i = 0; i < numbers.Length; i++)
             {
                 // Create a Line  
                 Line redLine = new Line();
-                redLine.X1 = i * 5;
-                redLine.Y1 = 0;
-                redLine.X2 = i * 5;
-                redLine.Y2 = numbers[i] * 3;
+                redLine.X1 = startDrawX + i * 6;
+                redLine.Y1 = startDrawY;
+                redLine.X2 = startDrawX + i * 6;
+                redLine.Y2 = startDrawY - (numbers[i] * 3);
 
                 // Create a red Brush  
                 SolidColorBrush redBrush = new SolidColorBrush();
                 redBrush.Color = Colors.Red;
 
                 // Set Line's width and color  
-                redLine.StrokeThickness = 4;
+                redLine.StrokeThickness = 5;
                 redLine.Stroke = redBrush;
 
                 // Add line to the Grid.  
