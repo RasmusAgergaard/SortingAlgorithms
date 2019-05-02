@@ -28,6 +28,11 @@ namespace SortingAlgorithms.UI
         {
             InitializeComponent();
 
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            dispatcherTimer.Start();
+
             numbers = bubbleSort.numbers;
 
             DrawLines();
@@ -60,8 +65,21 @@ namespace SortingAlgorithms.UI
             }
         }
 
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            bubbleSort.SortArrayOneStep();
+            numbers = bubbleSort.numbers;
+
+            grid1.Children.Clear();
+            DrawLines();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            bubbleSort = new BubbleSort();
+            numbers = bubbleSort.numbers;
+            grid1.Children.Clear();
+            DrawLines();
         }
     }
 }

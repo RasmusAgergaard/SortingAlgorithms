@@ -12,12 +12,14 @@ namespace SortingAlgorithms.BL
         private Random random = new Random();
         public int[] numbers;
 
+        private int check = 0;
+
         public BubbleSort()
         {
             numbers = new int[amount];
             PopulateArray();
             RadomizeArray(numberOfMoves: 1000);
-            SortArray();
+            //SortArray();
         }
 
         public void PopulateArray()
@@ -57,6 +59,18 @@ namespace SortingAlgorithms.BL
                     } 
                 }
             }
+        }
+
+        public void SortArrayOneStep()
+        {
+            if (numbers[check] > numbers[check + 1])
+            {
+                var temp = numbers[check];
+                numbers[check] = numbers[check + 1];
+                numbers[check + 1] = temp;
+            }
+
+            check++;
         }
     }
 }
