@@ -8,11 +8,13 @@ namespace SortingAlgorithms.BL
 {
     public class BubbleSort
     {
-        private int amount = 152;
-        private Random random = new Random();
+        public int amount = 152;
+        public Random random = new Random();
         public int[] numbers;
 
-        private int check = 0;
+        public int Check { get; set; }
+        public int check = 0;
+        public int reduce = 0;
 
         public BubbleSort()
         {
@@ -63,6 +65,12 @@ namespace SortingAlgorithms.BL
 
         public void SortArrayOneStep()
         {
+            if (check >= (numbers.Length - 1) - reduce)
+            {
+                check = 0;
+                reduce++;
+            }
+
             if (numbers[check] > numbers[check + 1])
             {
                 var temp = numbers[check];

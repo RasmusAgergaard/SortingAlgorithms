@@ -30,7 +30,7 @@ namespace SortingAlgorithms.UI
 
             System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 100);
+            dispatcherTimer.Interval = new TimeSpan(1);
             dispatcherTimer.Start();
 
             numbers = bubbleSort.numbers;
@@ -45,23 +45,31 @@ namespace SortingAlgorithms.UI
 
             for (int i = 0; i < numbers.Length; i++)
             {
-                // Create a Line  
-                Line redLine = new Line();
-                redLine.X1 = startDrawX + i * 6;
-                redLine.Y1 = startDrawY;
-                redLine.X2 = startDrawX + i * 6;
-                redLine.Y2 = startDrawY - (numbers[i] * 3);
+                Line line = new Line();
+                line.X1 = startDrawX + i * 6;
+                line.Y1 = startDrawY;
+                line.X2 = startDrawX + i * 6;
+                line.Y2 = startDrawY - (numbers[i] * 3);
 
-                // Create a red Brush  
-                SolidColorBrush redBrush = new SolidColorBrush();
-                redBrush.Color = Colors.Red;
+                SolidColorBrush brush = new SolidColorBrush();
 
-                // Set Line's width and color  
-                redLine.StrokeThickness = 5;
-                redLine.Stroke = redBrush;
+                if (i == bubbleSort.check || i == bubbleSort.check + 1)
+                {
+                    brush.Color = Colors.Red;
+                }
+                else if (i > (bubbleSort.numbers.Length - 1) - bubbleSort.reduce)
+                {
+                    brush.Color = Colors.Black;
+                }
+                else
+                {
+                    brush.Color = Colors.DarkGray;
+                }
 
-                // Add line to the Grid.  
-                grid1.Children.Add(redLine);
+                line.StrokeThickness = 5;
+                line.Stroke = brush;
+
+                grid1.Children.Add(line);
             }
         }
 
@@ -70,14 +78,6 @@ namespace SortingAlgorithms.UI
             bubbleSort.SortArrayOneStep();
             numbers = bubbleSort.numbers;
 
-            grid1.Children.Clear();
-            DrawLines();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            bubbleSort = new BubbleSort();
-            numbers = bubbleSort.numbers;
             grid1.Children.Clear();
             DrawLines();
         }
