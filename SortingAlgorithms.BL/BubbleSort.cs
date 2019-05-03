@@ -12,7 +12,6 @@ namespace SortingAlgorithms.BL
         public Random random = new Random();
         public int[] numbers;
 
-        public int Check { get; set; }
         public int check = 0;
         public int reduce = 0;
 
@@ -21,7 +20,6 @@ namespace SortingAlgorithms.BL
             numbers = new int[amount];
             PopulateArray();
             RadomizeArray(numberOfMoves: 1000);
-            //SortArray();
         }
 
         public void PopulateArray()
