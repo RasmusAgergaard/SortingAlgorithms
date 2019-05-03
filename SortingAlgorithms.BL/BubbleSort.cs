@@ -8,7 +8,7 @@ namespace SortingAlgorithms.BL
 {
     public class BubbleSort
     {
-        public int amount = 152;
+        public int amount = 70;
         public Random random = new Random();
         public int[] numbers;
 
